@@ -1,16 +1,10 @@
-require "tomereader/version"
+require "logging"
 require "pdf/reader"
+require "tomereader/version"
+require "tomereader/settings"
+require "tomereader/parser"
+require "tomereader/index"
+require "tomereader/wordstorage"
 
 module Tomereader
-  class PDFReader
-    def initialize(filename)
-      @reader = PDF::Reader.new(filename)
-    end
-    def pages_count
-      @reader.page_count
-    end
-    def read
-      @reader.pages.map(&:text)
-    end
-  end
 end
