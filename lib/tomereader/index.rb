@@ -9,24 +9,21 @@ module Tomereader
       raise StandardError, "Content is empty" if content.empty?
       @logger = create_logger
       @content = content
-      #TODO: catch artefacts like:  [“ ™ ﬁnd]
-      @word_pattern = /[\s,;\"]+/
+      # @word_pattern = /[\s,;\"]+/
       @phrase_pattern = /[\.\;]/
-      @word_storage = WordStorage.new
+      #@word_storage = WordStorage.new
     end
     def split_into_phrases
       content.split phrase_pattern
     end
     def to_s
-      {words: @word_storage.count, phrases: @phrases.count}
+      {words: WordStorage.total, phrases: @phrases.count}
     end
+    # розбиває текст на фрази, витягує слова,
+    # встановлює звязки:  фраза -> слова, та слово -> фрази
     def split
-      @phrases = split_into_phrases
-      @phrases.each_with_index do |phrase, index|
-        words = phrase.strip.split word_pattern
-        words.each_with_index do |word, position|
-          @word_storage.add({word: word, index: index,position: position})
-        end
+      @phrases = split_into_phrases.map do |phrase_string|
+        phrase = Phrase.new(phrase_string).split
       end
       @logger.info to_s
       to_s
