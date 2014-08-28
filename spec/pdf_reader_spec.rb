@@ -37,31 +37,25 @@ describe Tomereader do
       expect(index.split_into_phrases.count).to eq book_info[:phrases]
     end
     it "#split" do
-      expect(index.split).to eq book_info
+      expect(index.split).to eq book_info[:words]
     end
   end
   context Tomereader::WordStorage do
     let :storage do
-      Tomereader::WordStorage.new
+      Tomereader::WordStorage
     end
-    let :data do
-      {word: "self-ignorable", index: 0, position: 0}
+    let :word do
+      "tomereader"
     end
-    it "empty data is not suitable for storage" do
-      expect(storage.suitable? "").to eq false
-      expect(@log_output.readline).to match "WARN  Tomereader::WordStorage : Data type String is not suitable for storage"
+    it "empty word is not suitable for storage" do
+      expect(storage.suitable? "").to_not eq true
     end
-    it "data keys mismatch is not suitable for storage" do
-      data.delete(:index)
-      expect(storage.suitable? data).to eq false
-      expect(@log_output.readline).to match "WARN  Tomereader::WordStorage : Data keys count mismatched"
+    it "creates word in storage" do
+      expect(storage.create(word)).to be_a Tomereader::Word
     end
-    it "is suitable for storage" do
-      expect(storage.suitable? data).to eq true
-    end
-    it "adds word to storage" do
-      storage.add data
-      expect(storage.count).to eq 1
+    it "finds word in storage" do
+      storage.create(word)
+      expect(storage.find(word)).to be_a Tomereader::Word
     end
   end
 end

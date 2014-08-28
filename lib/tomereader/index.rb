@@ -9,9 +9,7 @@ module Tomereader
       raise StandardError, "Content is empty" if content.empty?
       @logger = create_logger
       @content = content
-      # @word_pattern = /[\s,;\"]+/
       @phrase_pattern = /[\.\;]/
-      #@word_storage = WordStorage.new
     end
     def split_into_phrases
       content.split phrase_pattern

@@ -1,38 +1,5 @@
 module Tomereader
-  class Phrase < Hash
-    def initialize(phrase_string)
-      @phrase_string = phrase_string.strip
-      @word_pattern = /[\s,;\"]+/
-      @words = []
-    end
-    def to_s
-      @phrase_string
-    end
-    def word_strings
-      @phrase_string.split @word_pattern
-    end
-    # split phrase into words
-    # @return Array of words
-    def split
-      return false if @words.count > 0 
-      word_strings.each_with_index do |word_string, position|
-        # create word only it does not exist !!!
-        #if word exists in word_storage, add phrase to word's phrases
-        word = WordStorage.find_or_create(word_string)
-        if word
-          word.add(self, position) # find by key
-          @words << word #
-        end 
-        # Добавляємо фразу у слово, та позицію слова у фразі
-        #@word_storage.add({word: word, index: index,position: position})
-      end
-    end
-  end
-  # words = {
-  #   'hello' => {0 => [5], 4 => [1], name: 'hello'},
-  #   'cat' => {67 => [6,7], 128 => [12, 8], name: ''}
-  #}
-  class Word < Hash
+   class Word
     def initialize(word)
       @name = word
       @phrases = Hash.new
@@ -43,69 +10,65 @@ module Tomereader
       else
         @phrases[phrase] = [position]
       end
+      self
     end
   end
   # зберігає слова, знаходить потрібне слово
   # TODO: make it singleton
   class WordStorage
     include Settings
+    attr_reader :word_pattern, :logger
+    attr_accessor :storage, :artefacts
     def initialize
       @storage = Hash.new
       @logger = create_logger
+      @artefacts = []
+      @word_pattern = /^[A-Za-z]([A-Za-z\'\-])*$/
     end
-    def storage
-      @storage
-    end
-    def self.total
-      self.instance.count
-    end
-    def self.instance
-      @@instance ||= self.new
-    end
-    def self.find_or_create(word_string)
-      storage = self.instance.storage
-      if storage.has_key? word_string
-        storage[word_string] # <= Word
-      else
-        if word_string =~ self.instance.format[:word]
+    class << self
+      def word_pattern
+        /^[A-Za-z]([A-Za-z\'\-])*$/
+      end
+      def storage
+        instance.storage
+      end
+      def suitable? word_string
+        word_string =~ instance.word_pattern
+      end
+      def total
+        storage.count
+      end
+      def instance
+        @@instance ||= self.new
+      end
+      def find(word_string)
+        if check(word_string) && storage.has_key?(word_string)
+          return storage[word_string]
+        end
+      end
+      def create(word_string)
+        if check word_string
           storage[word_string] = Word.new(word_string)
-        else
-          false
         end
       end
-    end
-    def format
-      {word: /^[A-Za-z]([A-Za-z\'\-])*$/, index: /^[\d]+$/, position: /^[\d]+$/}
-    end
-    def add(data)
-      push(data[:word], data) if suitable? data
-    end
-    def count
-      @storage.count
-    end
-    def push(key, data)
-      if @storage.has_key? key
-        @storage[key].push data
-      else
-        @storage[key] = [data]
+      def add_artefact(word_string)
+        instance.artefacts << word_string
+        false
+        #raise TypeError, "#{word_string} word is not suitable"
       end
-    end
-    def suitable? data
-      response = check(data)
-      @logger.warn response if response.kind_of? String
-      not response.kind_of? String
-    end
-    def check(data)
-      return "Data type #{data.class} is not suitable for storage" unless data.kind_of? Hash
-      return "Data keys count mismatched" unless data.count == format.count
-      format.each_pair do |key, pattern|
-        if data.has_key? key
-          return "#{key} format mismatched: #{data[key]}" unless data[key].to_s =~ pattern
+      def check(word_string)
+        unless word_string.kind_of? String
+          raise TypeError,"Only String supported - #{word_string.class} given instead for" 
+        end
+        unless suitable? word_string
+          add_artefact(word_string) 
         else
-          return "Data doesn't have key #{key}"
+          true
         end
       end
-      true
+      def find_or_create(word_string)
+        find(word_string) || create(word_string)
+      end
     end
   end
 end
