@@ -15,7 +15,7 @@ module Tomereader
       content.split phrase_pattern
     end
     def to_s
-      {words: WordStorage.total, phrases: @phrases.count}
+      {total: WordStorage.total, unique_count: WordStorage.unique_count, phrases: @phrases.count}
     end
     # розбиває текст на фрази, витягує слова,
     # встановлює звязки:  фраза -> слова, та слово -> фрази

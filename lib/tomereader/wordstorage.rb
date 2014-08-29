@@ -13,17 +13,15 @@ module Tomereader
       self
     end
   end
-  # зберігає слова, знаходить потрібне слово
-  # TODO: make it singleton
   class WordStorage
     include Settings
     attr_reader :word_pattern, :logger
-    attr_accessor :storage, :artefacts
+    attr_accessor :storage, :total_words
     def initialize
       @storage = Hash.new
       @logger = create_logger
-      @artefacts = []
-      @word_pattern = /^[A-Za-z]([A-Za-z\'\-])*$/
+      @total_words = []
+      @word_pattern = /[A-Za-z]([A-Za-z\'\-])*/
     end
     class << self
       def word_pattern
@@ -36,6 +34,9 @@ module Tomereader
         word_string =~ instance.word_pattern
       end
       def total
+        instance.total_words.count
+      end
+      def unique_count
         storage.count
       end
       def instance
@@ -51,22 +52,11 @@ module Tomereader
           storage[word_string] = Word.new(word_string)
         end
       end
-      def add_artefact(word_string)
-        instance.artefacts << word_string
-        false
-        #raise TypeError, "#{word_string} word is not suitable"
-      end
       def check(word_string)
-        unless word_string.kind_of? String
-          raise TypeError,"Only String supported - #{word_string.class} given instead for" 
-        end
-        unless suitable? word_string
-          add_artefact(word_string) 
-        else
-          true
-        end
+        word_string.kind_of?(String) && suitable?(word_string)
       end
       def find_or_create(word_string)
+        instance.total_words << word_string if check(word_string)
         find(word_string) || create(word_string)
       end
     end

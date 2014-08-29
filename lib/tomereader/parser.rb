@@ -12,21 +12,21 @@ module Tomereader
       raise StandardError, "Format is undefined" unless match && format
       format
     end
-    def reader
+    def read
       case format
       when 'pdf'
-        PDF::Reader.new(filename)
+        reader = PDF::Reader.new(filename)
+        content = reader.pages.map(&:text)
+        raise StandardError, "Content is empty" if content.empty?
+        content.join.gsub(/[\s\n]+/, " ")
+      when 'txt'
+        File.read(filename)
       else
         raise StandardError, "Unfortunatelly, format #{format} is unsupported"
       end
     end
     def pages_count
       reader.page_count
-    end
-    def read
-      content = reader.pages.map(&:text)
-      raise StandardError, "Content is empty" if content.empty?
-      content.join.gsub(/[\s\n]+/, " ")
     end
   end
 end

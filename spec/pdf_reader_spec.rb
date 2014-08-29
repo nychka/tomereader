@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Tomereader do
   before do
     path = File.expand_path(File.dirname(__FILE__) + "/../data")
-    filename = "content.pdf"
+    filename = "content.txt"
     @file = File.join(path, filename)
   end
   let :parser do
@@ -13,12 +13,12 @@ describe Tomereader do
     it "has correct filename path" do
       expect(File.exists? @file).to eq true
     end
-    it "#format is .pdf" do
-      expect(parser.format).to eq "pdf"
-    end
-    it "#page_count is 2" do
-      expect(parser.pages_count).to eq 2
-    end
+    # it "#format is .pdf" do
+    #   expect(parser.format).to eq "pdf"
+    # end
+    # it "#page_count is 2" do
+    #   expect(parser.pages_count).to eq 2
+    # end
     it "#read" do
       expect(parser.read.length).to be > 0
     end
@@ -31,13 +31,13 @@ describe Tomereader do
       Tomereader::Index.new(content)
     end
     let :book_info do
-      {:words=>295, :phrases=>27}
+      {:total=>1532, :phrases=>122}
     end
     it "split_into_phrases" do
       expect(index.split_into_phrases.count).to eq book_info[:phrases]
     end
     it "#split" do
-      expect(index.split).to eq book_info[:words]
+      expect(index.split[:total]).to eq book_info[:total]
     end
   end
   context Tomereader::WordStorage do

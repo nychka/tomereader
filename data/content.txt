@@ -1,1 +1,88 @@
-" Locatrix and Ubuntu Company Overview “The community Locatrix Communications is a developer of mobile location-based application services, for deployment by enterprises and mobile network operators. of users grows by thousands every week, and the The four-year old Brisbane-based company is the brains behind the Uandme™ social networking service, which lets mobile subscribers ﬁnd their stability of Ubuntu friends, receive alerts when they are nearby, and browse for places to meet. Linux has been a key factor in the Uandme™ also allows users to share geo-tagged content – such as text messages, blogs and photos. The service is currently being deployed on service’s success.” a number of mobile networks in Australia, Asia and Europe. Business Challenge When Telstra, Australia’s leading mobile network operator, wanted to enable a social networking community across its extensive subscriber base, it selected Locatrix to provide an industry-leading solution The Locatrix UandMe™ service, which in the Telstra context is known as WhereisEveryone, lets users with GSM, 3G and HSDPA mobile services keep a real-time and constantly updated snapshot of colleagues’ and buddies’ locations on their cell phones, and set up individual alerts. Once the group - all users have to expressly permit the tracking - has converged, they can use location services to help them ﬁnd a nearby point of interest or meeting place. Locatrix started development on Sun hardware running Solaris, then went the Linux route - ﬁrst with Red Hat Linux and then, after active lobbying from their software architect, to servers running Canonical’s Ubuntu distribution. “We tried Ubuntu as a development platform and it quickly spread through our various projects, (so) we made a decision to host our ﬁrst mobile operator deployment - Telstra - on Ubuntu,” said Locatrix Founder & CEO Mark White. Ubuntu Solution “Hardware detection is Ubuntu ﬁt the job like a glove, he said. For one thing, it allows developers fantastic and the stock to install and lock down the speciﬁc components they want. That has big ramiﬁcations from a footprint and security perspective. Unlike other major kernel has everything Linux distributions, with Ubuntu there was no need to recompile from source we need. From a code every time the developers had to work on more than one native platform. security standpoint, the fact that we get to “The minimum install capability lets us deploy a basic LAMP conﬁguration select very speciﬁc very quickly, running only the services and daemons that we need - and package sets to be nothing else,” he stressed. “Hardware detection is fantastic and the stock installed is useful.” kernel has everything we need. From a security standpoint, the fact that we get to select very speciﬁc package sets to be installed is useful.” The company’s developers also rave about Ubuntu’s AptGet (advanced packaging tool) which automates the retrieval, conﬁguration and installation of applications and eases their management. AptGet is a “huge improvement” over the RTM package manager found in other distributions, White noted. In addition to PHP and Python, Locatrix developers use JavaScript and Java as required. They also work with Visual Studio when they have to program for Windows Mobile devices, but other than that UandMe is a solid LAMP citizen. The Result Telstra, which launched the service via its BigPond Mobile portal in February 2007, is thrilled by the uptake of Whereis Everyone. Indeed, the community of users grows by thousands every week, and the stability of Ubuntu Linux has been a key factor it the service’s success. Copyright © 2007 | Ubuntu is sponsored by Canonical Ltd. | Ubuntu, Kubuntu, Edubuntu and the associated logos are all registered trademarks of Canonical Ltd. All other trademarks mentioned in this document are the properties of their respective owners."
+CHAPTER ONE
+T
+mirror in my house. It is behind a sliding panel in the hallway upstairs. Our faction allows me to stand in front of it on the
+second day of every third month, the day my mother cuts my hair.
+I sit on the stool and my mother stands behind me with the scissors, trimming. The strands fall on the floor in a dull, blond ring.
+When she finishes, she pulls my hair away from my face and twists it into a knot. I note how calm she looks and how focused she
+is. She is well-practiced in the art of losing herself. I can’t say the same of myself.
+I sneak a look at my reflection when she isn’t paying attention—not for the sake of vanity, but out of curiosity. A lot can happen
+to a person’s appearance in three months. In my reflection, I see a narrow face, wide, round eyes, and a long, thin nose—I still look
+like a little girl, though sometime in the last few months I turned sixteen. The other factions celebrate birthdays, but we don’t. It
+would be self-indulgent.
+“There,” she says when she pins the knot in place. Her eyes catch mine in the mirror. It is too late to look away, but instead of
+scolding me, she smiles at our reflection. I frown a little. Why doesn’t she reprimand me for staring at myself?
+“So today is the day,” she says.
+“Yes,” I reply.
+“Are you nervous?”
+I stare into my own eyes for a moment. Today is the day of the aptitude test that will show me which of the five factions I belong
+in. And tomorrow, at the Choosing Ceremony, I will decide on a faction; I will decide the rest of my life; I will decide to stay with
+my family or abandon them.
+“No,” I say. “The tests don’t have to change our choices.”
+“Right.” She smiles. “Let’s go eat breakfast.”
+“Thank you. For cutting my hair.”
+She kisses my cheek and slides the panel over the mirror. I think my mother could be beautiful, in a different world. Her body is
+thin beneath the gray robe. She has high cheekbones and long eyelashes, and when she lets her hair down at night, it hangs in waves
+over her shoulders. But she must hide that beauty in Abnegation.
+We walk together to the kitchen. On these mornings when my brother makes breakfast, and my father’s hand skims my hair as he
+reads the newspaper, and my mother hums as she clears the table—it is on these mornings that I feel guiltiest for wanting to leave
+them.
+HERE IS ONE
+The bus stinks of exhaust. Every time it hits a patch of uneven pavement, it jostles me from side to side, even though I’m gripping
+the seat to keep myself still.
+My older brother, Caleb, stands in the aisle, holding a railing above his head to keep himself steady. We don’t look alike. He has
+my father’s dark hair and hooked nose and my mother’s green eyes and dimpled cheeks. When he was younger, that collection of
+features looked strange, but now it suits him. If he wasn’t Abnegation, I’m sure the girls at school would stare at him.
+He also inherited my mother’s talent for selflessness. He gave his seat to a surly Candor man on the bus without a second thought.
+The Candor man wears a black suit with a white tie—Candor standard uniform. Their faction values honesty and sees the truth as
+black and white, so that is what they wear.
+The gaps between the buildings narrow and the roads are smoother as we near the heart of the city. The building that was once
+called the Sears Tower—we call it the Hub—emerges from the fog, a black pillar in the skyline. The bus passes under the elevated
+tracks. I have never been on a train, though they never stop running and there are tracks everywhere. Only the Dauntless ride them.
+Five years ago, volunteer construction workers from Abnegation repaved some of the roads. They started in the middle of the city
+and worked their way outward until they ran out of materials. The roads where I live are still cracked and patchy, and it’s not safe to
+drive on them. We don’t have a car anyway.
+Caleb’s expression is placid as the bus sways and jolts on the road. The gray robe falls from his arm as he clutches a pole for
+balance. I can tell by the constant shift of his eyes that he is watching the people around us—striving to see only them and to forget
+himself. Candor values honesty, but our faction, Abnegation, values selflessness.
+The bus stops in front of the school and I get up, scooting past the Candor man. I grab Caleb’s arm as I stumble over the man’s
+shoes. My slacks are too long, and I’ve never been that graceful.
+The Upper Levels building is the oldest of the three schools in the city: Lower Levels, Mid-Levels, and Upper Levels. Like all the
+other buildings around it, it is made of glass and steel. In front of it is a large metal sculpture that the Dauntless climb after school,
+daring each other to go higher and higher. Last year I watched one of them fall and break her leg. I was the one who ran to get the
+nurse.
+“Aptitude tests today,” I say. Caleb is not quite a year older than I am, so we are in the same year at school.
+He nods as we pass through the front doors. My muscles tighten the second we walk in. The atmosphere feels hungry, like every
+sixteen-year-old is trying to devour as much as he can get of this last day. It is likely that we will not walk these halls again after the
+Choosing Ceremony—once we choose, our new factions will be responsible for finishing our education.
+Our classes are cut in half today, so we will attend all of them before the aptitude tests, which take place after lunch. My heart rate
+is already elevated.
+“You aren’t at all worried about what they’ll tell you?” I ask Caleb.
+We pause at the split in the hallway where he will go one way, toward Advanced Math, and I will go the other, toward Faction
+History.
+He raises an eyebrow at me. “Are you?”
+I could tell him I’ve been worried for weeks about what the aptitude test will tell me—Abnegation, Candor, Erudite, Amity, or
+Dauntless?
+Instead I smile and say, “Not really.”
+He smiles back. “Well...have a good day.”
+I walk toward Faction History, chewing on my lower lip. He never answered my question.
+The hallways are cramped, though the light coming through the windows creates the illusion of space; they are one of the only
+places where the factions mix, at our age. Today the crowd has a new kind of energy, a last day mania.
+A girl with long curly hair shouts “Hey!” next to my ear, waving at a distant friend. A jacket sleeve smacks me on the cheek.
+Then an Erudite boy in a blue sweater shoves me. I lose my balance and fall hard on the ground.
+“Out of my way, Stiff,” he snaps, and continues down the hallway.
+My cheeks warm. I get up and dust myself off. A few people stopped when I fell, but none of them offered to help me. Their eyes
+follow me to the edge of the hallway. This sort of thing has been happening to others in my faction for months now—the Erudite
+have been releasing antagonistic reports about Abnegation, and it has begun to affect the way we relate at school. The gray clothes,
+the plain hairstyle, and the unassuming demeanor of my faction are supposed to make it easier for me to forget myself, and easier for
+everyone else to forget me too. But now they make me a target.
+I pause by a window in the E Wing and wait for the Dauntless to arrive. I do this every morning. At exactly 7:25, the Dauntless
+prove their bravery by jumping from a moving train.
+My father calls the Dauntless “hellions.” They are pierced, tattooed, and black-clothed. Their primary purpose is to guard the
+fence that surrounds our city. From what, I don’t know.
+They should perplex me. I should wonder what courage—which is the virtue they most value—has to do with a metal ring
+through your nostril. Instead my eyes cling to them wherever they go.
+The train whistle blares, the sound resonating in my chest. The light fixed to the front of the train clicks on and off as the train
+hurtles past the school, squealing on iron rails. And as the last few cars pass, a mass exodus of young men and women in dark
+clothing hurl themselves from the moving cars, some dropping and rolling, others stumbling a few steps before regaining their
+balance. One of the boys wraps his arm around a girl’s shoulders, laughing.
+Watching them is a foolish practice. I turn away from the window and press through the crowd to the Faction History classroom.
