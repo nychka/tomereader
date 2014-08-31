@@ -1,6 +1,6 @@
 module Tomereader
   class Word
-    attr_reader :name#, :phrases
+    attr_reader :name, :phrases
     def initialize(word)
       @name = word
       @phrases = Hash.new
@@ -15,7 +15,7 @@ module Tomereader
     end
     def 
     def frequency
-      phrases.count
+      @phrases.count
     end
     def phrase_format(phrase)
       {source: phrase[0].to_s, positions: phrase[1]}
@@ -28,7 +28,7 @@ module Tomereader
       end
     end
     def to_s
-      "#{name} : #{phrases.count}"
+      "#{name} : #{@phrases.count}"
     end
   end
 end

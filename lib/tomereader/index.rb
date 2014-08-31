@@ -35,12 +35,12 @@ module Tomereader
       @phrase_storage
     end
     def words_sorted_by_alphabet(count=nil)
-      words = index.words.sort_by{|key, value| key}
+      words = self.words.sort_by{|key, value| key}
       words = words.first(count) unless count.nil?
       Hash[words]
     end
     def words_sorted_by_frequency(count=nil)
-      words = index.words.sort_by{|key, value| value.frequency}
+      words = self.words.sort_by{|key, value| value.phrases.count}
       words = words.first(count) unless count.nil?
       Hash[words]
     end

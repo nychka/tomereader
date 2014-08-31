@@ -21,6 +21,20 @@ describe Tomereader do
     let(:index) { Tomereader::Index.new(content) }
     let(:book_info) { {:total=>64, :phrases=>5} }
     
+    it "shows word's list of phrases" do
+      index.split
+      word = index.find('alike')
+      phrases = word.phrases
+      expect(phrases.count).to eq 1
+      expect(phrases[0][:source]).to eq "We don’t look alike"
+      expect(phrases[0][:positions]).to be_a_kind_of Array
+      expect(phrases[0][:positions][0]).to eq 3
+    end
+    it "shows word's list sorted by frequency" do
+      index.split
+      hash = index.words_sorted_by_frequency
+      expect(hash.first[0]).to eq "I"
+    end
     it "split_into_phrases" do
       expect(index.split_into_phrases.count).to eq book_info[:phrases]
     end
