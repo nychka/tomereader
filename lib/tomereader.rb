@@ -1,4 +1,6 @@
 require "logging"
+require 'em-synchrony'
+require 'tempfile'
 require "pdf/reader"
 require "tomereader/version"
 require "tomereader/settings"

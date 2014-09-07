@@ -13,7 +13,6 @@ module Tomereader
       end
       self
     end
-    def 
     def frequency
       @phrases.count
     end

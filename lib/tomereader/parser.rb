@@ -3,26 +3,30 @@ module Tomereader
     attr_reader :format_pattern, :filename, :reader
     def initialize(filename)
       raise ArgumentError, "Specify correct filename" if not filename and filename.empty?
+      raise StandardError, "File #{filename} not exists" unless File.exists? filename
       @filename = filename
-      @format_pattern = /\.([a-z]{3,4})$/
+      @format_pattern = /[a-z0-9_\-\.]+\.([a-z0-9]{3,4})$/
     end
     def format
-      match = format_pattern.match(filename)
-      format = match[1]
-      raise StandardError, "Format is undefined" unless match && format
+      @match = format_pattern.match(filename)
+      format = @match[1]
+      raise StandardError, "Format is undefined" unless @match && format
       format
     end
     def read
       case format
       when 'pdf'
-        reader = PDF::Reader.new(filename)
-        content = reader.pages.map(&:text)
-        raise StandardError, "Content is empty" if content.empty?
-        content.join.gsub(/[\s\n]+/, " ")
+        #TODO: check if pdftotext installed
+        open("|pdftotext #{filename} -").read() 
       when 'txt'
         File.read(filename)
       else
-        raise StandardError, "Unfortunatelly, format #{format} is unsupported"
+        temp_file = Tempfile.new([@match[0], '.txt'])
+        system("ebook-convert #{filename} #{temp_file.path}")
+        content = temp_file.read
+        temp_file.close
+        temp_file.unlink
+        content
       end
     end
     def pages_count

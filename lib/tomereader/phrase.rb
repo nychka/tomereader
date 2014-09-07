@@ -1,12 +1,12 @@
 module Tomereader
   class Phrase
-    include Settings
+    #include Settings
     attr_reader :words
     def initialize(phrase_string)
       @phrase_string = phrase_string.strip
       @word_pattern = /[\s,;\"\—]+/
       @words = []
-      @logger = create_logger
+      #@logger = create_logger
     end
     def to_s
       @phrase_string
@@ -25,7 +25,7 @@ module Tomereader
         end
         words.count
       rescue => e
-        @logger.warn e.message
+        #@logger.warn e.message
       end
     end
   end
