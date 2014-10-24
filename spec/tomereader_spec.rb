@@ -28,7 +28,7 @@ describe Tomereader do
       temp_file.close
       temp_file.unlink
     end
-    it "converts fb2 to txt and reads" do
+    xit "converts fb2 to txt and reads" do
       filename = "stormrage.fb2"
       file = File.join(@path, filename)
       expect(File.exists?(file)).to eq true
