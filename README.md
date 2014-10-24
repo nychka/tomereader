@@ -27,3 +27,5 @@ TODO: Write usage instructions here
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+[ ![Codeship Status for nychka/tomereader](https://www.codeship.io/projects/8595e280-3da0-0132-0fb6-028472313e2c/status)](https://www.codeship.io/projects/43314)

@@ -2,11 +2,7 @@
 # - розміщує фрази та слова в індексі
 module Tomereader
   class Index
-    #include Settings
     def initialize
-      #raise ArgumentError, "Content must be a String - #{content.class} given instead" unless content.kind_of? String
-      #raise StandardError, "Content is empty" if content.empty?
-      #@logger = create_logger
       @phrase_split_pattern = /[\.\;]/
       @word_pattern = /[A-Za-z]([A-Za-z\'\-])*/
       @word_storage = Hash.new
