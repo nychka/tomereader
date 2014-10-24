@@ -17,10 +17,12 @@ module Tomereader
       case format
       when 'pdf'
         #TODO: check if pdftotext installed
+        raise StandardError, "pfdtotext not installed" unless system('pdftotext -v')
         open("|pdftotext #{filename} -").read() 
       when 'txt'
         File.read(filename)
       else
+        raise StandardError, "ebook-convert is not installed. Try: sudo apt-get install calibre" unless system('ebook-convert --version')
         temp_file = Tempfile.new([@match[0], '.txt'])
         system("ebook-convert #{filename} #{temp_file.path}")
         content = temp_file.read
