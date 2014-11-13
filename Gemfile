@@ -4,3 +4,4 @@ source 'https://rubygems.org'
 gemspec
 
 gem "rspec-autotest"
+gem 'codeclimate-test-reporter', group: :test, require: nil

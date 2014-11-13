@@ -29,3 +29,5 @@ TODO: Write usage instructions here
 5. Create new Pull Request
 
 [ ![Codeship Status for nychka/tomereader](https://www.codeship.io/projects/8595e280-3da0-0132-0fb6-028472313e2c/status)](https://www.codeship.io/projects/43314)
+[![Code Climate](https://codeclimate.com/github/nychka/tomereader/badges/gpa.svg)](https://codeclimate.com/github/nychka/tomereader)
+[![Test Coverage](https://codeclimate.com/github/nychka/tomereader/badges/coverage.svg)](https://codeclimate.com/github/nychka/tomereader)
