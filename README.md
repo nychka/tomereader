@@ -1,6 +1,6 @@
 # Tomereader
 
-TODO: Write a gem description
+Shows how many words and pharases are in the book and their frequency.
 
 ## Installation
 
@@ -31,3 +31,4 @@ TODO: Write usage instructions here
 [ ![Codeship Status for nychka/tomereader](https://www.codeship.io/projects/8595e280-3da0-0132-0fb6-028472313e2c/status)](https://www.codeship.io/projects/43314)
 [![Code Climate](https://codeclimate.com/github/nychka/tomereader/badges/gpa.svg)](https://codeclimate.com/github/nychka/tomereader)
 [![Test Coverage](https://codeclimate.com/github/nychka/tomereader/badges/coverage.svg)](https://codeclimate.com/github/nychka/tomereader)
+[![Gem Version](https://badge.fury.io/rb/tomereader.svg)](http://badge.fury.io/rb/tomereader)
